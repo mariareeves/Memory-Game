@@ -1,3 +1,59 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+
+
+}
+
+body {
+    background-color: green;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    height: 50px;
+    width: 1200px;
+    justify-content: center;
+    background-color: #8af073;
+}
+
+.board {
+    width: 80vh;
+    background: white;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+
+
+img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+
+body>.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#start {
+    background-color: #d7dbd5;
+    margin: auto;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10%;
+    color: black;
+    font-size: 20px;
 }
