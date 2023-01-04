@@ -6,7 +6,6 @@
 
 body {
     height: 100vh;
-    display: flex;
     background: green;
 }
 
@@ -15,6 +14,13 @@ h1 {
 
 }
 
+header {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #8af073;
+
+}
 
 .board {
     width: 640px;
@@ -24,6 +30,7 @@ h1 {
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     perspective: 1000px;
 }
