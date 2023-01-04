@@ -62,6 +62,7 @@ img {
     transform: rotateY(180deg);
 }
 
-.cardflip {
+
+.cards.flip {
     transform: rotateY(180deg);
 }

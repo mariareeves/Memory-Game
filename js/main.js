@@ -20,21 +20,22 @@ let isBoardLocked = false;
 
 
 // dom elements
-const cardsEl = document.querySelector('.cards')
+// selecting all the cards
+const cardsEl = document.querySelectorAll('.cards')
 
+function cardFlip(evt) {
+    const evtClicked = evt.target.parentElement  //parentElement to grab the div with class of cards
+    // console.log(evtClicked)
+    // console.log('I was clicked')
+    evtClicked.classList.toggle('flip')
 
-
-
-/*----- event listeners -----*/
-
-cardsEl.addEventListener('click', cardFlip)
-
-
-
-
-
-// /*----- functions -----*/
-function cardFlip() {
-    cardsEl.classList.toggle('cardflip')
 }
+
+// iterating through all the cards and adding an event listener to it
+cardsEl.forEach(function (card) {
+    card.addEventListener('click', cardFlip)
+})
+
+
+
 
