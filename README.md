@@ -41,10 +41,7 @@ This game will test your memory and help you to get to know some of the flags ar
 
 ---
 ## Getting Started:
-
-
-
-
+https://mariareeves.github.io/Memory-Game/
 
 ---
 
