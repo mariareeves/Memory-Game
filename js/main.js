@@ -3,7 +3,7 @@ let cardOne, cardTwo;
 let isCardFlipped = false;
 let isBoardLocked = false;
 let counter = 0
-// dom elements
+
 // selecting all the cards
 const cardsEl = document.querySelectorAll('.cards')
 const startBtn = document.getElementById('start')
@@ -36,8 +36,7 @@ function gameStart() {
 
 function cardFlip(evt) {
     const evtClicked = evt.target.parentElement //parentElement to grab the div with class of cards
-    // console.log(parentEvt)
-    // console.log('I was clicked')
+
     if (isBoardLocked) return
     if (evtClicked === cardOne) return
 
@@ -112,13 +111,13 @@ function timerGame() {
     stopGame()
     timerSeconds--
     timerDiv.innerHTML = `Timer: 00:${timerSeconds}`
-    console.log(timerSeconds)
+
 
 
 
 }
 
-// }
+
 
 // stop game
 function stopGame() {
@@ -139,24 +138,13 @@ function winner() {
     if (counter === 6) {
         winMessage.innerHTML = 'Congratulations. You found all the flags!'
         clearInterval(countdown)
-        restartBtn.style.display = 'show'
 
 
     }
 }
 
 
-// function playAGain() {
-//     const restartBtn = document.createElement('button')
-//     restartBtn.setAttribute('id', 'restartBtn')
-//     restartBtn.innerHTML = 'Play again'
 
-//     divButtons.appendChild(restartBtn)
-//     resetGame()
-
-
-
-// }
 
 
 
@@ -176,11 +164,10 @@ function resetGame() {
     counter = 0
     winMessage.innerHTML = ''
     cardsEl.forEach(function (card) {
-        card.remove('flip')
+        card.classList.remove('flip')
     })
     cardsEl.forEach(function (card) {
         card.addEventListener('click', cardFlip)
     })
     shuffleCards()
-    // restart.style.display = 'none'
 }

@@ -15,21 +15,20 @@ h1 {
 
 }
 
-#timer {
-    padding: 15px;
-    display: flex;
-    justify-content: center
-}
+
 
 h2 {
     text-align: center;
 }
 
 #timer {
-    height: 50px;
+    width: 640px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     background-color: #8af073;
+    border-radius: 18px;
+    margin: auto;
 
 }
 
