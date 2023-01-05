@@ -10,9 +10,11 @@ const startBtn = document.getElementById('start')
 const timerDiv = document.querySelector('#timer')
 const winMessage = document.querySelector('h2')
 const divButtons = document.querySelector('.buttons')
+const restartBtn = document.getElementById('restart')
+
 
 startBtn.addEventListener('click', gameStart)
-restartBtn.addEventListener('click', playAGain)
+restartBtn.addEventListener('click', resetGame)
 
 
 
@@ -21,7 +23,7 @@ restartBtn.addEventListener('click', playAGain)
 // iterate through all cards then add event listener
 function gameStart() {
     hideButton()
-    timerSeconds = 40
+    timerSeconds = 41
     countdown = setInterval(timerGame, 1000)
 
 
@@ -110,6 +112,7 @@ function timerGame() {
     stopGame()
     timerSeconds--
     timerDiv.innerHTML = `Timer: 00:${timerSeconds}`
+    console.log(timerSeconds)
 
 
 
@@ -119,13 +122,13 @@ function timerGame() {
 
 // stop game
 function stopGame() {
-    if (timerSeconds <= 0 || timerSeconds < 1) {
+    if (timerSeconds <= 0 || timerSeconds <= 1) {
         clearInterval(countdown)
         cardsEl.forEach(function (card) {
             card.removeEventListener('click', cardFlip)
         })
-        winMessage.innerHTML = 'you lost!'
-        playAGain
+        winMessage.innerHTML = 'Your time is up. Try it again'
+        restartBtn.style.display = 'show'
 
     }
 }
@@ -136,24 +139,24 @@ function winner() {
     if (counter === 6) {
         winMessage.innerHTML = 'Congratulations. You found all the flags!'
         clearInterval(countdown)
-        playAGain()
+        restartBtn.style.display = 'show'
 
 
     }
 }
 
 
-function playAGain() {
-    const restartBtn = document.createElement('button')
-    restartBtn.setAttribute('id', 'restartBtn')
-    restartBtn.innerHTML = 'Play again'
+// function playAGain() {
+//     const restartBtn = document.createElement('button')
+//     restartBtn.setAttribute('id', 'restartBtn')
+//     restartBtn.innerHTML = 'Play again'
 
-    divButtons.appendChild(restartBtn)
-    resetGame()
+//     divButtons.appendChild(restartBtn)
+//     resetGame()
 
 
 
-}
+// }
 
 
 
@@ -168,14 +171,16 @@ function hideButton() {
 // restart the game
 function resetGame() {
     clearInterval(countdown)
-    timerSeconds = 40
+    timerSeconds = 41
     countdown = setInterval(timerGame, 1000)
     counter = 0
     winMessage.innerHTML = ''
-    cardsEl.forEach(card => card.classList.remove('flip'))
-    cardsEl.forEach(card => card.classList.addEventListener('click', cardFlip))
+    cardsEl.forEach(function (card) {
+        card.remove('flip')
+    })
+    cardsEl.forEach(function (card) {
+        card.addEventListener('click', cardFlip)
+    })
     shuffleCards()
-    restartBtn.style.display = 'none'
-
-
+    // restart.style.display = 'none'
 }
