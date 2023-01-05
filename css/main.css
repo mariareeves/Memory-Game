@@ -14,7 +14,17 @@ h1 {
 
 }
 
-header {
+#timer {
+    padding: 15px;
+    display: flex;
+    justify-content: center
+}
+
+h2 {
+    text-align: center;
+}
+
+#timer {
     height: 50px;
     display: flex;
     justify-content: center;
@@ -33,6 +43,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     perspective: 1000px;
+    cursor: pointer;
 }
 
 .cards {
@@ -72,4 +83,17 @@ img {
 
 .cards.flip {
     transform: rotateY(180deg);
+}
+
+#start,
+#restartBtn {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #e6e6e6;
+    color: black;
+    font-size: 20px;
+    padding: 12px 28px;
+    border-radius: 15px;
+    cursor: pointer;
 }
