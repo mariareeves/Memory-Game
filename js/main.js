@@ -126,7 +126,7 @@ function stopGame() {
         cardsEl.forEach(function (card) {
             card.removeEventListener('click', cardFlip)
         })
-        winMessage.innerHTML = 'Your time is up. Try it again'
+        winMessage.innerHTML = 'Your time is up. Try again!'
         restartBtn.style.display = 'show'
 
     }
