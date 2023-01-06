@@ -48,7 +48,7 @@ https://mariareeves.github.io/Memory-Game/
 ### Icebox:
 * Upon game start, briefly display all flags before flipping back to the question mark side.
 * Show a move counter next to the timer. 
-* Restyle the wireframe.
+* Restyle the layout.
 
 
 
