@@ -61,7 +61,6 @@ function cardFlip(evt) {
 function checkForMatch() {
     if (cardOne.dataset.flag === cardTwo.dataset.flag) {
         stopFLip()
-        console.log('Match')
         counter++
         winner()
     } else {
